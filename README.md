@@ -1,4 +1,4 @@
-# DataScience_DigitalTech
+# DataScience_MultipleRegressioninR
 Working on data science with tools to innovate digital tech
 ```
 This repositories consist of different data science projects and will be accessible for public. 
