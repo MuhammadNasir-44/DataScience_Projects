@@ -6,4 +6,4 @@ Public can access the data here and find out different analytics techniques that
 ```
 #Project1: Multiple Regression in R (R file is accessible and can be downloaded)
 
-#Project2: Data Wrangling in R with MoMa Artist, Work, Tatemodern Artist
+#Project2: Data Wrangling in R with MoMaArtist/Work, Tatemodern Artist
