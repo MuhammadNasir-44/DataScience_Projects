@@ -1,6 +1,5 @@
 # DataScience_DigitalTech
-Working on data science with tools to innovate digital tech
-
+Working on Data Science and tools to Innovate in Digital Technology 
 ```
 This repositories consist of different data science projects and will be accessible for public. 
 Public can access the data here and find out different analytics techniques that IT and Business Users can understand and gain valuable insights from it.
