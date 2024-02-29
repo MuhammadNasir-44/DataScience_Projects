@@ -21,3 +21,9 @@ The dataset contains the following variables:
 The `mtcars` dataset is readily available in R and can be loaded using the following command:
 ```R
 data(mtcars)
+
+Purpose:
+To use coding as a data cleansing process and use technique to analyse it.
+library used:
+library(tidyverse)
+library(lubridate)
