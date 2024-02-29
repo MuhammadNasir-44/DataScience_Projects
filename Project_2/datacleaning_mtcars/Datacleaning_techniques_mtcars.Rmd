@@ -1,0 +1,93 @@
+---
+title: "Cleaning"
+output:
+  html_document:
+    df_print: paged
+---
+
+## Some examples on cleaning
+
+```{r}
+library(tidyverse)
+library(lubridate)
+```
+
+## Rownames
+
+If we look at mtcars ther is one obvious omission - the make and model of the car.
+
+```{r}
+mtcars %>% 
+  tbl_df()
+```
+
+This is because the make and model is stored in the row names - a bad idea.
+
+```{r}
+mtcars %>% 
+  row.names()
+```
+
+We can correct this:
+
+```{r}
+(mtcars_proc <- 
+  mtcars %>%
+  rownames_to_column("Model"))
+```
+
+We might want to separate make and model.
+
+```{r}
+(mtcars_proc <- 
+   mtcars_proc %>% 
+   mutate(Model = str_trim(Model)) %>% 
+   separate(Model, into = c("Make", "Model"), sep = "\\s", extra = "merge"))
+```
+
+## A quick example on dates and the use of `lubridate`
+
+
+Create some dummy data
+
+```{r}
+set.seed(123)
+(dat_raw <- 
+ tibble(Dy = sample(1:31, 50, replace = TRUE,),
+          Mnth = sample(1:12, 50, replace = TRUE,),
+          Yr = sample(1960:2019, 50, replace = TRUE,)) %>% 
+   mutate(Date = paste(Dy, Mnth, Yr, sep = ".")))
+
+```
+
+## Convert to a date type.
+
+```{r}
+(dat_proc <- 
+   dat_raw %>% 
+   mutate(Date = dmy(Date)))
+```
+(Why did one fail to parse?)
+
+Once we have a data format we can use to lubridate functions to extract day, month and year.
+
+```{r}
+day(dat_proc$Date)
+```
+
+```{r}
+wday(dat_proc$Date, label = TRUE)
+```
+
+```{r}
+month(dat_proc$Date, label = TRUE)
+```
+
+
+
+
+
+
+
+
+
