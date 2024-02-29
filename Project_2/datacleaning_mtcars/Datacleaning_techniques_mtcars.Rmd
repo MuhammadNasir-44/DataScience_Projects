@@ -1,8 +1,5 @@
 ---
 title: "Cleaning"
-output:
-  html_document:
-    df_print: paged
 ---
 
 ## Some examples on cleaning
