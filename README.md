@@ -10,7 +10,7 @@ Multiple Regression in R (R file is accessible)
 #### Project2: 
 Data Wrangling in R with MoMaArtist/Work, Tatemodern Artist datasets (R file is accessible) &
 
-Data Cleaning in R with mtcars
+Data Cleaning in R with mtcars, Data Cleaning 2 with books.csv data
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #### Quality Contributions, Project Collaboration, Learning Resources, Ideas for Portfolio Projects, Networking, Open Source Contributions are always welcome ## 😃🤗🎫
