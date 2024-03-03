@@ -7,12 +7,12 @@ library(wordcloud2)
 library(here)
 ```
 
-#### Read in books saved to disk
+#### Read in books saved to disk ####
 
-#book_raw <- read_csv(here("Data", "books.csv"))
+book_raw <- read_csv(here("Data", "books.csv"))
 book_raw <- read_csv("books.csv")
 
-#### Tidy up the data.
+#### Tidy up the data ####
 
 ```
 book_lines <- 
@@ -25,7 +25,7 @@ book_lines <-
   ungroup()
 book_lines
 ```
-#### Find out how long each book is.
+#### Find out how long each book is ####
 ```
 book_length <- 
   book_lines %>% 
@@ -33,7 +33,7 @@ book_length <-
   summarise(length = n())
 book_length 
 ```
-#### Split into words.
+#### Split into words ####
 
 ```
 book_words <- 
