@@ -12,10 +12,9 @@ library(here)
 #book_raw <- read_csv(here("Data", "books.csv"))
 book_raw <- read_csv("books.csv")
 
+#### Tidy up the data.
 
-#### Step1:Tidy up the data.
-
-```{r}
+```
 book_lines <- 
   book_raw %>% 
   filter(text != "") %>% 
@@ -26,4 +25,51 @@ book_lines <-
   ungroup()
 book_lines
 ```
+#### Find out how long each book is.
+```
+book_length <- 
+  book_lines %>% 
+  group_by(title) %>% 
+  summarise(length = n())
+book_length 
+```
+#### Split into words.
+
+```
+book_words <- 
+  book_lines %>% 
+  unnest_tokens(word, text) %>% 
+  mutate(word = str_replace_all(word, "_", ""))
+book_words
+```
+## If you want to check the frequency of the words been used ###
+
+```
+book_words %>% 
+  count(word, sort = TRUE, name = "freq")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
