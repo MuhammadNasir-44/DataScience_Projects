@@ -6,9 +6,8 @@ Public can access the data here and find out different analytics techniques that
 ```
 
 #### Project1: 
-Multiple Regression in R (R file is accessible)
-#### Project2: 
-Data Wrangling in R with MoMaArtist/Work, Tatemodern Artist datasets (R file is accessible) &
+Multiple Regression in R 
+Data Wrangling in R with MoMaArtist/Work, Tatemodern Artist datasets 
 
 Data Cleaning in R with mtcars, Data Cleaning 2 with books.csv data(work in progress)
 
