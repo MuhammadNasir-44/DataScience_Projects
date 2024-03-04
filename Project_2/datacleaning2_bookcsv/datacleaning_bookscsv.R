@@ -42,13 +42,32 @@ book_words <-
   mutate(word = str_replace_all(word, "_", ""))
 book_words
 ```
-## If you want to check the frequency of the words been used ###
+#### If you want to check the frequency of the words been used ###
 
 ```
 book_words %>% 
   count(word, sort = TRUE, name = "freq")
 ```
+#### Removing Common Words and Generating Word Clouds ####
+"The code removes very common words from the book_words dataset using the anti_join() function with a list of stop words. It then counts the frequency of each remaining word."
+```
+book_words %>% 
+  anti_join(stop_words) %>% 
+  count(word, sort = TRUE, name = "freq")
+```
+"Now to generates word clouds for specific titles in the book_words dataset. 
+It first removes common words using the anti_join() function, filters the dataset for a specific title (e.g., "Wuthering Heights"), 
+counts the frequency of each word, filters out words with frequencies less than 10, and finally creates a word cloud using the wordcloud2() function."
 
+```
+book_words %>% 
+  anti_join(stop_words) %>% 
+  filter(title == "Wuthering Heights") %>% 
+  count(word, sort = TRUE, name = "freq") %>% 
+  filter(freq > 10) %>% 
+  wordcloud2()
+book_words
+```
 
 
 
