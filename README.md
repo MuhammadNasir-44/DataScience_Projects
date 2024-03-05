@@ -9,7 +9,7 @@ Public can access the data here and find out different analytics techniques that
 Multiple Regression in R 
 Data Wrangling in R with MoMaArtist/Work, Tatemodern Artist datasets 
 
-Data Cleaning in R with mtcars, Data Cleaning 2 with books.csv data(work in progress)
+Data Cleaning in R with mtcars, DataCleaning + WordCloud with books & cleanafinn dataset
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #### Quality Contributions, Project Collaboration, Learning Resources, Ideas for Portfolio Projects, Networking, Open Source Contributions are always welcome ## 😃🤗🎫
