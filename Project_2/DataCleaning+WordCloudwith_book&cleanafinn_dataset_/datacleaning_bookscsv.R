@@ -80,7 +80,7 @@ sentiment <-
 sentiment
 ```
 ###Data Cleaning: Removing 'miss' Entries ####
-"The code snippet reads the clean_afinn.csv dataset into the book_raw dataframe and filters out rows where the word is "miss". 
+"The code reads the clean_afinn.csv dataset into the book_raw dataframe and filters out rows where the word is "miss". 
 This step is performed as part of data cleaning to remove irrelevant or erroneous entries from the dataset.
 The rationale for removing these entries is provided with a comment in the code."
 
@@ -91,7 +91,34 @@ book_words %>%
   count(word, sort = TRUE, name = "freq") %>% 
   wordcloud2()
 ```
+#### Calculating Cumulative Sentiment Scores ####
+"Calculatinga the cumulative sentiment scores for each line in the book_words dataset. It joins the sentiment dataframe to associate sentiment values with words, groups the data by book title and line, 
+calculates the cumulative sum of sentiment scores (cscore), normalizes the cumulative score by the length of the book, and computes the depth of each line as a percentage through the book. 
+Finally, it outputs the resulting book_sentiment dataframe."
 
+```
+book_sentiment <- 
+  book_words %>% 
+  inner_join(sentiment) %>% 
+  group_by(title, line) %>% 
+  summarise(score = sum(value)) %>% 
+  mutate(cscore = cumsum(score)) %>% 
+  ungroup() %>% 
+  left_join(book_length) %>% 
+  mutate(cscore = cscore / length,
+         depth = line / length)
+book_sentiment 
+```
+#### Visualizing Cumulative Sentiment Trends ####
+"Plotting to visualize the cumulative sentiment trends across different book titles. It utilizes the ggplot2 package to plot cscore (cumulative sentiment score) 
+against depth (percentage through the book), with different colors representing each book title. The plot provides insights into how sentiment changes throughout the progression of each book."
+
+```
+ggplot(book_sentiment) +
+  geom_line(aes(x = depth, y = cscore, color = title)) +
+  ylab("Cumulative sentiment score")+
+  xlab("Percentage through book")
+```
 
 
 
