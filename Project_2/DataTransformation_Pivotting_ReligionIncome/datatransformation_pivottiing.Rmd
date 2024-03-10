@@ -1,9 +1,5 @@
----
-title: "Pivotting"
-output:
-  html_document:
-    df_print: paged
----
+Code for the exercise #
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(include = TRUE, echo = TRUE)
@@ -15,7 +11,7 @@ library(tidyverse)
 library(readxl)
 ```
 
-## Making data longer
+#### Making data longer ####
 
 Consider this data set:
 
@@ -24,29 +20,28 @@ data(relig_income) # Load the data set.
 relig_income
 ```
 
-How many variables are there in relig_income?
-
-To tidy this data we use `pivot_longer`
-
 ```{r}
 relig_income_tdy <- 
   relig_income %>% 
     pivot_longer(-religion, names_to = "income", values_to = "count")
 ```
+How many variables are there in relig_income?
+To tidy this data we use `pivot_longer`
+"The resulting relig_income_tdy dataframe contains the pivoted data in a longer format, where each row represents a unique combination of religion and income category, and the count column contains the corresponding count of individuals falling into each income category for each religion.In summary, the code transforms the original dataset from a wide format, where income categories are represented as separate columns, to a longer format, where income categories are represented as rows within a single column. This transformation makes the data more "tidy" and suitable for various data analysis and visualization tasks."
 
-Not so easy to look at, but often easier to process. For example, with `ggplot`.
 
 ```{r}
-# We no longer need to use coord_flip() for horizontal bar charts
-
 ggplot(relig_income_tdy) + 
   geom_col(aes(y = religion, x = count, fill = income)) 
 ```
+"The first visualization displays horizontal bars representing the count of individuals within each income category for each religion. Each bar is filled with different colors representing income categories, making it easier to distinguish between them. This chart enables quick comparison of income distribution among religious groups.
+
 
 ```{r}
 ggplot(relig_income_tdy) + 
   geom_col(aes(y = income, x = count, fill = religion))
 ```
+"The second visualization presents vertical bars representing the count of individuals within each religious group for each income category. Each bar is filled with different colors representing religious groups, facilitating comparison of income distribution across different income categories.""
 
 ```{r}
 #NB this needs refactoring
@@ -61,4 +56,13 @@ ggplot(relig_income_tdy) +
   geom_col(aes(x = income, y = count, fill = religion)) + 
   coord_flip()
 ```
+"The resulting visualization is a horizontal bar chart where each bar represents the count of individuals within each income category for each religion.
+The bars are colored according to the respective religious groups, facilitating comparison of income distribution across different religious groups.
+By ensuring a specific order of income bands, the visualization maintains consistency and clarity, allowing for easier interpretation of the data."
+
+
+
+
+
+
 
