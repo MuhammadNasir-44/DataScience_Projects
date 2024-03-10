@@ -5,12 +5,12 @@ This repositories consist of different data science projects and will be accessi
 Public can access the data here and find out different analytics techniques that IT and Business Users can understand and gain valuable insights from it.
 ```
 
-#### Project1: 
+#### Project1 in R: 
 Multiple Regression in R 
 Data Wrangling in R with MoMaArtist/Work, Tatemodern Artist datasets 
 
-#### Project2:
-Data Cleaning in R with mtcars
+#### Project2 in R:
+Data Cleaning with mtcars
 
 DataCleaning + WordCloud with books & cleanafinn dataset
 
