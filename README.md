@@ -10,8 +10,10 @@ Multiple Regression in R
 Data Wrangling in R with MoMaArtist/Work, Tatemodern Artist datasets 
 
 #### Project2:
-Data Cleaning in R with mtcars, 
+Data Cleaning in R with mtcars
+
 DataCleaning + WordCloud with books & cleanafinn dataset
+
 DataTransformation_Pivotting_ReligionIncome
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
