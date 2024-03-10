@@ -12,7 +12,7 @@ Data Wrangling in R with MoMaArtist/Work, Tatemodern Artist datasets
 #### Project2:
 Data Cleaning in R with mtcars, 
 DataCleaning + WordCloud with books & cleanafinn dataset
-Data Wrangling with Religion_income data 
+DataTransformation_Pivotting_ReligionIncome
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #### Quality Contributions, Project Collaboration, Learning Resources, Ideas for Portfolio Projects, Networking, Open Source Contributions are always welcome ## 😃🤗🎫
