@@ -43,9 +43,7 @@ ggplot(relig_income_tdy) +
 ```
 "The second visualization presents vertical bars representing the count of individuals within each religious group for each income category. Each bar is filled with different colors representing religious groups, facilitating comparison of income distribution across different income categories.""
 
-```{r}
-#NB this needs refactoring
-
+```{r}NB this needs refactoring
 income_bands <- unique(relig_income_tdy$income)
 relig_income_tdy <- 
   relig_income_tdy %>% 
