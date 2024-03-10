@@ -1,0 +1,64 @@
+---
+title: "Pivotting"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(include = TRUE, echo = TRUE)
+options(dplyr.summarise.inform = FALSE)
+```
+
+```{r, message = FALSE, warning = FALSE}
+library(tidyverse)
+library(readxl)
+```
+
+## Making data longer
+
+Consider this data set:
+
+```{r}
+data(relig_income) # Load the data set.
+relig_income
+```
+
+How many variables are there in relig_income?
+
+To tidy this data we use `pivot_longer`
+
+```{r}
+relig_income_tdy <- 
+  relig_income %>% 
+    pivot_longer(-religion, names_to = "income", values_to = "count")
+```
+
+Not so easy to look at, but often easier to process. For example, with `ggplot`.
+
+```{r}
+# We no longer need to use coord_flip() for horizontal bar charts
+
+ggplot(relig_income_tdy) + 
+  geom_col(aes(y = religion, x = count, fill = income)) 
+```
+
+```{r}
+ggplot(relig_income_tdy) + 
+  geom_col(aes(y = income, x = count, fill = religion))
+```
+
+```{r}
+#NB this needs refactoring
+
+income_bands <- unique(relig_income_tdy$income)
+relig_income_tdy <- 
+  relig_income_tdy %>% 
+  mutate(income = ordered(income,
+                          levels = income_bands[c(10, 1:9)]))
+
+ggplot(relig_income_tdy) + 
+  geom_col(aes(x = income, y = count, fill = religion)) + 
+  coord_flip()
+```
+
