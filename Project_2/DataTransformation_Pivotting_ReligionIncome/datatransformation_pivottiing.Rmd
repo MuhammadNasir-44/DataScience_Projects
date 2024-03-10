@@ -25,9 +25,7 @@ relig_income_tdy <-
   relig_income %>% 
     pivot_longer(-religion, names_to = "income", values_to = "count")
 ```
-How many variables are there in relig_income?
-To tidy this data we use `pivot_longer`
-"The resulting relig_income_tdy dataframe contains the pivoted data in a longer format, where each row represents a unique combination of religion and income category, and the count column contains the corresponding count of individuals falling into each income category for each religion.In summary, the code transforms the original dataset from a wide format, where income categories are represented as separate columns, to a longer format, where income categories are represented as rows within a single column. This transformation makes the data more "tidy" and suitable for various data analysis and visualization tasks."
+"How many variables are there in relig_income?To tidy this data we use `pivot_longer`.The resulting relig_income_tdy dataframe contains the pivoted data in a longer format, where each row represents a unique combination of religion and income category, and the count column contains the corresponding count of individuals falling into each income category for each religion.In summary, the code transforms the original dataset from a wide format, where income categories are represented as separate columns, to a longer format, where income categories are represented as rows within a single column. This transformation makes the data more "tidy" and suitable for various data analysis and visualization tasks."
 
 
 ```{r}
