@@ -16,7 +16,7 @@ DataCleaning + WordCloud with books & cleanafinn dataset
 
 DataTransformation_Pivotting_ReligionIncome
 
-Regular Expressions Exercise for Text Processing: Examples with stringr
+Regular Expressions Exercise for Text Processing: Examples with stringr (working in consideration)
 
 
 
