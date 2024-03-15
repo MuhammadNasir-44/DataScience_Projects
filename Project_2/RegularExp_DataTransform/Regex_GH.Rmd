@@ -13,13 +13,69 @@ options(dplyr.summarise.inform = FALSE)
 ```{r load_packages, message=FALSE, warning=FALSE}
 library(tidyverse)
 ```
-
 This notebook contains some examples on the use of regular expressions and the tidyverse string functions contained in`stringr`
-
 It is by no means comprehensive - regular expressions can be considered a language in their own right. See:
-
 https://stringr.tidyverse.org/articles/regular-expressions.html
-
-
 ```
+======
+For `stringr` see:
+https://stringr.tidyverse.org/articles/stringr.html
+-----------------------------------------------------------------------------------------------------------------------------------
+## Detecting
+```{r}
+test_str <- c("Paul",
+              "paul",
+              "SY23 5ND",
+              "SY235ND",
+              "25/12/2019",
+              "25/12/19")
+```
+-----------------------------------------------------------------------------------------------------------------------------------
+```{r}
+# Match "Paul"
+
+pattern <- "Paul"
+
+test_str %>% 
+  str_detect(pattern)
+```
+-----------------------------------------------------------------------------------------------------------------------------------
+```{r}
+# Match "Paul or paul"
+
+pattern <- "(?i)Paul"
+
+test_str %>% 
+  str_detect(pattern)
+```
+-----------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
