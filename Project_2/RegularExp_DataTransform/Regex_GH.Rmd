@@ -77,6 +77,19 @@ test_str %>%
 ```
 -------------------------------------------------------------------
 
+```{r}
+# Extract the first date from sentence.
+
+sentence <- "The holiday will start on 24/12/2019 and end on 02/01/2020"
+
+pattern <- "\\d{1,2}/\\d{1,2}/(\\d{4}|\\d{2})"
+
+sentence %>% 
+  str_extract(pattern)
+```
+-------------------------------------------------------------------
+
+
 
 
 
